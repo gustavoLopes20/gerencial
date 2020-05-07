@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'HKGrotesk';
+    src:  url('@/assets/typo/HKGrotesk-Bold.woff2') format('woff2'),
+          url('@/assets/typo/HKGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'HKGrotesk';
+    src:  url('@/assets/typo/HKGrotesk-Medium.woff2') format('woff2'),
+          url('@/assets/typo/HKGrotesk-Medium.woff') format('woff');
+    font-weight: medium;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'HKGrotesk';
+    src:  url('@/assets/typo/HKGrotesk-Regular.woff2') format('woff2'),
+          url('@/assets/typo/HKGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }

@@ -1,0 +1,50 @@
+
+<section class="sec-detail-promo">
+  <h4><strong>Detalhe do registro</strong></h4>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Produto</td>
+        <td>{{item.Product}}</td>
+      </tr>
+      <tr>
+        <td>Inicio</td>
+        <td class="bold color-success">{{item.InicioOferta}}</td>
+      </tr>
+      <tr>
+        <td>Fim</td>
+        <td class="bold color-info">{{item.FimOferta}}</td>
+      </tr>
+      <tr>
+        <td>Preço</td>
+        <td class="bold">{{item.Value}}</td>
+      </tr>
+      <tr>
+        <td>Banner</td>
+        <td>{{item.Banner}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="hline"></div>
+  
+  <vue-picture-swipe :items="imgs" class="block-column picture-img" />
+
+  <button type="button" class="btn btn-outline-danger col-02" @click="clickEventEmit"><i class="fas fa-times" ></i> Fechar</button>
+</section>
+
+<!-- Banner: "Sim"
+Depart: null
+Description: null
+FimOferta: "05/01/2020"
+Id: 1
+ImgBanner: null
+ImgPath: Array(2)
+ImgPrincipal: null
+InicioOferta: "04/10/2020"
+Prod: null
+Product: "FACAO P/ MATO 10 CABO MADEIRA"
+RID: "D5ED4331882BE85B60"
+Status: "Ativo"
+Title: null
+Value: "250,03" -->
+

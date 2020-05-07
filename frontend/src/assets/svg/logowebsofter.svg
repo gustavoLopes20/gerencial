@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1124.5389"
+   height="296.42313"
+   viewBox="0 0 297.53425 78.428621"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="logooriginal.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="628.19167"
+     inkscape:cy="275.22598"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     showborder="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(194.2042,9.1304646)">
+    <g
+       id="g856"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <text
+         transform="scale(0.98518013,1.0150428)"
+         id="text817"
+         y="45.984074"
+         x="-198.06953"
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:55.52697754px;line-height:1.25;font-family:'Alegreya Sans SC';-inkscape-font-specification:'Alegreya Sans SC, Ultra-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.38820696"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:55.52722168px;font-family:'Alegreya Sans SC';-inkscape-font-specification:'Alegreya Sans SC, Heavy';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:1.38820696"
+           y="45.984074"
+           x="-198.06953"
+           id="tspan815"
+           sodipodi:role="line">WebSofter</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:17.77917862px;line-height:1.25;font-family:'Alegreya Sans SC';-inkscape-font-specification:'Alegreya Sans SC, Ultra-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44448984"
+         x="-12.314631"
+         y="69.719559"
+         id="text821"
+         transform="scale(1.007877,0.99218457)"><tspan
+           sodipodi:role="line"
+           id="tspan819"
+           x="-12.314631"
+           y="69.719559"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.7792244px;font-family:'Alegreya Sans SC';-inkscape-font-specification:'Alegreya Sans SC, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.44448984">Technology</tspan></text>
+      <g
+         transform="translate(-8.1264881,3.0238095)"
+         id="g846">
+        <path
+           style="fill:#ff0000;stroke:#ff0000;stroke-width:0.17313018px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 103.30534,19.261446 c 8.60217,-31.177163 8.0577,-31.329155 8.0577,-31.329155 H 73.621774 Z"
+           id="path841"
+           inkscape:connector-curvature="0" />
+        <circle
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2.23334789;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path827"
+           cx="92.082291"
+           cy="3.6226435"
+           r="10.063458" />
+        <circle
+           r="9.2931337"
+           cy="3.7920218"
+           cx="91.997604"
+           id="circle829"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ff0000;stroke-width:1.84736013;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>

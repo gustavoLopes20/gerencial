@@ -1,0 +1,14 @@
+<section class="sec-grafico">
+
+  <div class="panel chart">
+    <div class="title"><h3>Gráfico de vendas</h3></div>
+    <bar-chart class="chart-item" :chartData="datacollection"/>
+  </div>
+
+  <div class="panel chart ultimo">
+      <div class="title"><h3>Gráfico de visitas</h3></div>
+      <line-chart class="chart-item" :chartData="data_visitas" :options="options_visitas" />
+    </div>
+
+</section>
+

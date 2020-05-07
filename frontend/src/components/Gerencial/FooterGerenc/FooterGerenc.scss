@@ -1,0 +1,13 @@
+.footer-gerenc {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #d8d8d8;
+    min-height: 84px;
+    padding: 40px;
+    color: #5a5555;
+    clear: both;
+    .text-center{
+        font-size: 1.2em;
+    }
+}

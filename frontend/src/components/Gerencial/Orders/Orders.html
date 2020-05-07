@@ -1,0 +1,9 @@
+<section class="orders">
+  <h2 class="titleRel">Pedidos</h2>
+
+  <Grid  :optionsData="optionsDataSource" urlGet="api/v1/order/list" 
+  @eventEdit="activeFormData(true,$event)"
+  @eventAdd="activeFormData(true)"
+  @detailCunstom="detailEvent($event)" />
+</section>
+

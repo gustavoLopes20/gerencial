@@ -1,0 +1,27 @@
+<section class="sec-grid">
+
+  <div class="wrapper-grid" >
+
+    <div class="btns-action left" v-if="detailAtual == null">
+      <button v-if="optionsData.permissons.Add" type="button" class="btn btn-outline-success" title="Novo"  @click="clickItem(null,'eventAdd')"><i class="fas fa-plus"></i> Adicionar</button>
+      
+      <button type="button"  :class="aplicssBts" title="Filtrar" @click="clickFilter" v-if="optionsData.columnsFilter.length">
+        <i class="fas fa-filter"></i> Filtro</button>
+    </div>
+
+
+    <Filters :fields="optionsData.columnsFilter" v-if="tabActive.filter" />
+
+    <DataSource :urlGet="urlGet" :options="optionsData"  v-if="tabActive.dataSource" 
+      @eventAdd="clickItem($event,'eventAdd')"
+      @eventEdit="clickItem($event,'eventEdit')"
+      :urlDel="urlDel"
+      @eventDetail="detailEvent($event)"
+      @eventDetailCunstom="detailCustomEvent($event)"
+    />
+
+    <Detail :item="detailAtual" :columnsDetails="optionsData.columnsDetails" @eventClose="detailEvent(null)" v-if="tabActive.detail" />
+
+  </div>
+
+</section>

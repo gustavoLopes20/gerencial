@@ -1,0 +1,79 @@
+<section class="promotions">
+  <h2 class="titleRel"><i class="fas fa-tags"></i> Ofertas</h2>
+
+  <form class="form-panel" v-if="tabFormActive">
+
+    <div class="form-row col-12" >
+      <div class="sec-field-input form-group col-03">
+          <Autocomplete
+            @model="eventProd($event)" 
+            keyName="Name" 
+            descriptionKey="Name" 
+            apiSearch="api/v1/product/keywordsgerenc"  
+            placeholder="Buscar por nome de produto"/>
+
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Preço</label>
+        <div class="control"><input type="number" class="input" v-model="model.Value" @keyup="formatNumber"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Dt Início</label>
+        <div class="control"><input type="date" class="input" v-model="model.DataInicial"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Dt Fim</label>
+        <div class="control"><input type="date" class="input" v-model="model.DataFinal"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Banner</label>
+        <div class="control">
+          <div class="select">
+            <select  v-model="model.BannerPrincipal">
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Imagens</label>
+        <div class="control"><input type="file" id="file" @change="fileChange" placeholder="Upload file"
+          accept=".jpg, .jpeg, .png" multiple class="input"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12 btns-action left">
+      <button type="button" class="btn btn-success" @click="saveItem">Salvar</button>
+      <button type="button" class="btn btn-danger" @click="activeFormData(false)">Cancelar</button>
+    </div>
+  
+  </form>
+
+  <div v-else-if="tablDetailCustom">
+    <DetailPromo :item="detailItem" @closeEvent="tablDetailCustom = false" />
+  </div>
+
+  <Grid v-else :optionsData="optionsDataSource" urlGet="api/v1/oferta/list" 
+    @eventEdit="activeFormData(true,$event)"
+    @eventAdd="activeFormData(true)"
+    @detailCunstom="detailEvent($event)" />
+
+
+</section>
+

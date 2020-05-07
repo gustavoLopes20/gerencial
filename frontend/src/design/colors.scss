@@ -1,0 +1,81 @@
+$color-body-bg: #f9f7f5;
+$color-text: #666;
+$color-text2: #4d4d4d;
+$color-heading-text: #35495e;
+
+$color-border: #e6e7e8;
+
+// LINKS
+$color-link-text: #39a275;
+$color-link-text-active: $color-text;
+
+// INPUTS
+$color-input-border: lighten($color-heading-text, 50%);
+
+// BUTTONS
+$color-button-bg: $color-link-text;
+$color-button-disabled-bg: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-text: #fff;
+$color-button-enable: #009661;
+$color-button-disable: red;
+
+// FUNDO
+$color-fundo: #f1f1f1;
+$color-fundo-second: #fff;
+//COR PRIMARIA
+$color-primary: #002e6b;
+$color-secondary: #252a2f;
+$color-transparent: rgba(0, 0, 0, 0.5);
+$color-transparent2: rgba(0, 0, 0, 0.1);
+
+$color-success: #40cd28;
+$color-danger: #e3503e;
+$color-warning: #f1c64a;
+$color-info: #5bc0de;
+
+.color-success {
+  color: $color-success;
+}
+.color-danger {
+  color: $color-danger;
+}
+.color-warning {
+  color: $color-warning;
+}
+.color-info {
+  color: $color-info;
+}
+.color-default {
+  color: $color-text;
+}
+.bold2 {
+  color: #929292;
+  font-weight: bold;
+}
+.blue {
+  color: #3498db;
+  font-size: 25px;
+  outline: none;
+  user-select: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.red {
+  color: #e74c3c;
+  font-size: 25px;
+  outline: none;
+  user-select: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.info {
+  color: #46b8da;
+  font-size: 25px;
+  outline: none;
+  user-select: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}

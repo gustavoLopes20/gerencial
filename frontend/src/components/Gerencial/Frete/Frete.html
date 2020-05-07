@@ -1,0 +1,62 @@
+
+<section class="sec-frete">
+  <h2 class="titleRel">Frete</h2>
+
+  <form class="form-panel" v-if="tabFormActive">
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Distância Inicial</label>
+        <div class="control"><input type="number" class="input" v-model="model.DistanceIni" @keyup="formatNumber('DistanceIni')" placeholder="KM"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Distância Final</label>
+        <div class="control"><input type="number" class="input" v-model="model.DistanceFim" name="fim" @keyup="formatNumber('DistanceFim')" placeholder="KM"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Preço</label>
+        <div class="control"><input type="number" class="input" v-model="model.Value" @keyup="formatNumber('Value')" placeholder="R$"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Tipo</label>
+        <div class="control">
+          <span class="select">
+            <select v-model="model.Type">
+              <option value="" selected  class="sec-disabled" disabled>-- Selecione --</option>
+              <option value="1">Convencional</option>
+              <option value="2">Agendada</option>
+            </select>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Dias Entrega</label>
+        <div class="control"><input type="number" class="input" v-model="model.DiasEntrega"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12 btns-action left">
+      <button class="btn btn-success" @click="saveItem">Salvar</button>
+      <button class="btn btn-danger" @click="activeFormData(false)">Cancelar</button>
+    </div>
+
+  </form>
+
+  <Grid v-else :optionsData="optionsDataSource" urlGet="api/v1/frete/list" urlDel="api/v1/frete/delete" 
+    @eventEdit="activeFormData(true,$event)"
+    @eventAdd="activeFormData(true)" />
+
+</section>
+

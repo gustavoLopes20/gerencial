@@ -1,0 +1,13 @@
+<section class="sec-detail">
+  <h4><strong>Detalhe do registro</strong></h4>
+  <table class="table">
+    <tbody>
+      <tr v-for="col in columnsDetails">
+        <td>{{col.title}}</td>
+        <td>{{item[col.key]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-outline-danger col-02" @click="clickEventEmit"><i class="fas fa-times" ></i> Fechar</button>
+</section>
+

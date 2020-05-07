@@ -1,0 +1,101 @@
+@import "../../../design/colors.scss";
+@import "../../../design/formularios.scss";
+
+.sec-products {
+  display: flex;
+  flex-direction: column;
+  .topo {
+    flex: 1;
+    width: 100%;
+    .title {
+      float: left;
+      margin-bottom: 10px;
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+      h1 {
+        font-weight: 300;
+        font-size: 25px;
+        color: #4c4d5a;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+    }
+    .bts {
+      float: right;
+      display: none;
+      @media (max-width: 800px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      &.active {
+        display: block;
+      }
+      button {
+        font-size: 1em;
+        display: inline-block;
+        margin: 2px;
+      }
+    }
+  }
+  .data-grid {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .filtro-wrapper {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 800px) {
+        padding: 5px;
+      }
+      .field {
+        flex: 1;
+        border-radius: 3px;
+        @media (max-width: 800px) {
+          width: 100%;
+          max-width: 100%;
+        }
+        &.f-right {
+          float: right;
+        }
+        button {
+          // width: 150px;
+          height: 37px;
+          border: 0;
+          user-select: none;
+          outline: none;
+          background-color: $color-primary;
+          color: #fff;
+          cursor: pointer;
+        }
+        &.f-search {
+          width: 70%;
+          float: left;
+          border: 1px solid rgb(185, 185, 185);
+          background-color: #fff;
+          input {
+            width: calc(100% - 40px);
+            font-size: 0.9em;
+            padding: 5px;
+            border: 0;
+            outline: none;
+          }
+          button {
+            width: 40px;
+            height: 35px;
+            border: 0;
+            user-select: none;
+            outline: none;
+            background-color: $color-primary;
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+

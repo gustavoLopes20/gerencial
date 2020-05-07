@@ -1,0 +1,62 @@
+<section class="sec-data-source">
+
+  <Loading v-if="activeLoading" />
+
+  <div>
+    <table class="table" v-if="dataSource.length" >
+      <thead>
+        <tr>
+          <th v-if="options.multcheck"> <input type="checkbox" @change="checkAllProd" v-model="model.checkAll"> </th>
+          <th v-for="col in options.columnsVisiable" @click="sortBy(col.key)" :class="{ active: sortKey == col.key }">
+            {{ col.title | capitalize }}
+  
+            <span v-if="sortKey == col.key" class="arrow">
+              <span class="arrow" v-if="sortOrders[col.key] > 0"><i class="fas fa-sort-amount-up-alt"></i></span>
+              <span class="arrow" v-else><i class="fas fa-sort-amount-down"></i></span>
+            </span>
+  
+          </th>
+          <th v-if="options.permissons.Update">E</th>
+          <th v-if="options.permissons.Delete">D</th>
+          <th v-if="options.permissons.Detail">V</th>
+          <th v-else-if="options.permissons.DetailCustom">V</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item,i) in filterData" @click="clickItem(item,'eventTrClick')">
+          <td class="columnCenter" v-if="options.multcheck"><input type="checkbox" ref="selected_prod" @change="changeCheckProd"
+              :value="JSON.stringify(item)"></td>
+          <td v-for="col in options.columnsVisiable" :class="objectClass(col,item)">{{item[col.key]}}</td>
+          <td class="columnCenter" v-if="options.permissons.Update">
+            <button type="button" class="blue" @click="clickItem(item,'eventEdit')"><i class="fas fa-edit"></i></button>
+          </td>
+          <td class="columnCenter" v-if="options.permissons.Delete">
+            <button type="button" class="red" @click="delItem(item)"><i
+                class="far fa-trash-alt"></i></button>
+          </td>
+          <td class="columnCenter" v-if="options.permissons.Detail">
+            <button type="button" class="info" @click="clickItem(item,'eventDetail')"><i class="fas fa-eye"></i></button>
+          </td>
+          <td class="columnCenter" v-else-if="options.permissons.DetailCustom">
+            <button type="button" class="info" @click="clickItem(item,'eventDetailCunstom')"><i class="fas fa-eye"></i></button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot v-if="mostraPanation && options.paginator.totGeralRows > 50">
+        <tr>
+          <td class="barra_tabela" colspan="9" style="padding: 20px 20px;">
+            <Pagination 
+              :totalGeralRows="options.paginator.totGeralRows" 
+              :maxPags="options.paginator.maxPags"
+              @pageChange="changePage($event)" />
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  
+    <div class="panel-info" v-else>
+      <span><i class="fas fa-info-circle"></i> Nenhum registro encontrado</span>
+    </div> 
+  </div>
+  
+</section>

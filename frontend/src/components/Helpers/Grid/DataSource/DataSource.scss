@@ -1,0 +1,108 @@
+@import "../../../../design/colors.scss";
+@import "../../../../design/formularios.scss";
+
+.sec-data-source {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+    overflow: hidden;
+    // overflow-x: auto;
+    .table {
+        flex: 1;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        background-color: #f6f6f6;
+        border: 1px solid #dcdcdc;
+        font-size: 1em;
+        table-layout: auto;
+        box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+        margin-bottom: 1.875rem;
+        // overflow: hidden;
+        thead {
+            tr {
+                background-color: #4b5867;
+                th {
+                    // display: flex;
+                    height: 35px;
+                    font-weight: bold;
+                    color: rgba(255, 255, 255, 0.66);
+                    user-select: none;
+                    // min-width: 120px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    // text-align: center;
+                    white-space: nowrap;
+                    text-align: center;
+                    min-width: 30px;
+                    &.active {
+                        color: #fff;
+                        &.arrow {
+                            opacity: 1;
+                        }
+                    }
+                    .arrow {
+                        float: right;
+                        // border:0;
+                        // background-color: transparent;
+                        // outline: none;
+                        // color:#fff;
+                        // font-size: 14px;
+                    }
+                }
+            }
+        }
+        tbody {
+            @media (max-width: 800px) {
+                overflow: scroll;
+                max-width: 800px;
+            }
+            tr {
+                border-bottom: 1px solid #dcdcdc;
+                transition: all 0.2s ease-in;
+                cursor: pointer;
+                &:hover {
+                    //color:lighten($color: #000000, $amount: 0)
+                    background-color: lighten(rgb(165, 165, 165), 25%);
+                }
+                td {
+                    vertical-align: middle !important;
+                    padding: 10px 20px;
+                    white-space: pre-wrap;
+                    img {
+                        width: 50px;
+                        object-fit: contain;
+                    }
+                    &.columnCenter {
+                        text-align: center !important;
+                    }
+                    &.columnRight {
+                        text-align: right !important;
+                    }
+                }
+            }
+        }
+        tfoot {
+            tr {
+                .barra_tabela {
+                    padding: 20px 20px;
+                    .paginationNumbers {
+                        em {
+                            margin: 7px;
+                            float: left;
+                        }
+                        button {
+                            font-weight: bold;
+                            padding: 10;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.panel-info {
+    font-size: 1.2em;
+    margin-top: 20px;
+}

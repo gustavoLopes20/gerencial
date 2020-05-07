@@ -1,0 +1,38 @@
+<header class="header-gerenc">
+  <div class="container-menu">
+    <button type="button" class="btn-menu" @click="onclickMenu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-menu" :class="clickMenu">
+        <ul class="list-menu">
+            <!-- <li v-for="item of menuDataSource"><router-link :to="item.Router" class="item-menu">{{item.Name}}</router-link></li> -->
+            <li v-for="(item,index) of menuDataSource">
+                <router-link  v-if="!item.Children.length" :to="item.Router" class="item-menu"  @click.native="activeMenu(false)"> <i :class="item.IconClass"></i> {{item.Name}} </router-link>
+                <span class="box-submenu" v-else>
+                    <a class="item-menu" @click="aplicaCssLink(index)"><i :class="item.IconClass"></i> {{item.Name}} <i class="fas fa-chevron-down icon-rigth"></i>
+                    </a>
+                    <ul class="sub-menu" :class="{ 'active-sub-menu': (id_atual == index && isActiveBtSubMenu) }">
+                        <li v-for="sub_item in item.Children"><router-link :to="sub_item.Router" class="item-menu sub-link"  @click.native="activeMenu(false)"><i :class="sub_item.IconClass"></i> {{sub_item.Name}}</router-link></li> 
+                    </ul>
+                </span>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <button type="button" class="bt-footer"><i class="fas fa-bell"></i></button>
+            <button type="button" class="bt-footer"><i class="fas fa-cog"></i></button>
+            <router-link to="/gerencial/perfil" class="bt-footer bt-user"><i class="fas fa-user-circle"></i></router-link>
+        </div>
+    </nav>
+  </div>
+  <router-link to="/gerencial/dashboard" class="logo-link">
+    Logo Aqui
+  </router-link>
+  <div class="btns-wrapper">
+    <button type="button" class="item-button btn-notification"  @click="reditectTo('/gerencial/notifications')"><i class="fas fa-bell"></i> <span class="bell-qtd">{{notifiQtd}}</span> </button>
+    <button type="button" class="item-button btn-config" ><i class="fas fa-cog"></i></button>
+    <button type="button" class="item-button btn-account" :class="{active : activeMenuUser}" @click="clickMenuUser"><i class="fas fa-user-circle"></i></button>
+    <nav class="menu-user" :class="{ active : activeMenuUser}">
+        <button type="button" class="u_item" @click="reditectTo('/gerencial/customer')"><i class="fas fa-user-edit"></i> <span>Perfil</span></button>
+        <button type="button" class="u_item" @click="logout"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></button>
+    </nav>
+  </div>
+</header>
+

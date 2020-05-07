@@ -1,0 +1,13 @@
+<section class="autocomplete" @mouseover="focus = true" @mouseleave="focus = false">
+  <div class="auto-field">
+    <label class="label">Produto</label>
+    <div class="control"><input type="text" class="input" v-model="keywords" :placeholder="placeholder" @focusin="focus = true"></div>
+  </div>
+  <div class="items" :class="aplicaCss">
+    <ul>
+      <li v-for="item in filterData" @click="selectedItem(item)">{{item.Id}} | {{item.Name}}</li>
+    </ul>
+  </div>
+  <div class="description">{{description}}</div>
+</section>
+

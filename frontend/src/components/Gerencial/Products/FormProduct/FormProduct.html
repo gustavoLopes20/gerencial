@@ -1,0 +1,146 @@
+<section class="sec-form-product">
+
+    <div class="form-panel">
+    
+        <div class="tab-head">
+            <button type="button" @click="openTab(1)" :class="{active: tab_active == 1}"><i
+                    class="fas fa-clipboard-list"></i> Geral</button>
+            <button type="button" @click="openTab(2)" :class="{active: tab_active == 2}"><i
+                    class="fas fa-pen-square"></i>
+                Dados</button>
+            <button type="button" @click="openTab(3)" :class="{active: tab_active == 3}"><i class="fas fa-list-alt"></i>
+                Atributos</button>
+            <button type="button" @click="openTab(5)" :class="{active: tab_active == 5}"><i
+                    class="fas fa-file-image"></i>
+                Imagens</button>
+        </div>
+
+        <div class="tab-content" :class="{ active: tab_active == 1}">
+            <div class="form-row">
+                <div class="form-group col-05">
+                    <label class="label">Produto</label>
+                    <input type="text" v-model="Model.Name" class="form-control">
+                </div>
+
+                <div class="form-group col-02">
+                    <label class="label">Refêrncia Externa</label>
+                    <input type="text" v-model="Model.ExternelReference" class="form-control">
+                </div>
+
+                <div class="form-group col-12">
+                    <label class="label">Descricão</label>
+                    <vue-editor v-model="Model.Description"></vue-editor>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tab-content" :class="{active: tab_active == 2}">
+
+
+            <div class="form-group col-03">
+                <label class="label">Preço</label>
+                <input type="number" v-model="Model.Price" @keyup="formatNumber('price')" class="form-control">
+            </div>
+
+            <div class="form-group col-03">
+                <label class="label">Qtd</label>
+                <input type="number" v-model="Model.Quantity" class="form-control">
+            </div>
+
+            <div class="form-group col-03">
+                <label class="label">Departamento</label>
+                <select v-model="Model.DepartId" class="form-control">
+                    <option v-for="item in departaments" :value="item.Id">{{item.Name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group col-03">
+                <label class="label">UndMedida</label>
+                <select v-model="Model.UndMedida" class="form-control">
+                    <option v-for="item in unidadeMedida" :value="item">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="form-group col-03">
+                <label class="label">Situação</label>
+                <select v-model="Model.Active" class="form-control">
+                    <option value="true">Ativo</option>
+                    <option value="false">Inativo</option>
+                </select>
+            </div>
+
+
+        </div>
+
+        <div class="tab-content" :class="{active: tab_active == 3}">
+
+            <div class="form-row">
+                <div class="form-group col-04">
+                    <label class="label">Atributo</label>
+                    <input type="text" v-model="Model.Infos.Key" class="form-control">
+                </div>
+                <div class="form-group col-12">
+                    <label class="label">Descricão</label>
+                    <textarea v-model="Model.Infos.Value" class="form-control col-04"></textarea>
+                </div>
+                <div class="form-group col-12">
+                    <button type="button" class="btn btn-primary" title="Adicionar Atributo" @click="changeAttr()"><i
+                            class="fas fa-plus"></i> </button>
+                </div>
+            </div>
+
+            <div class="list-data">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th>Atributo</th>
+                            <th>Descricão</th>
+                            <th>D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item,index) in Model.Infos.Lista">
+                            <td>{{item.Key}}</td>
+                            <td>{{item.Value}}</td>
+                            <td><button type="button" class="red" @click="changeAttr(index)"><i
+                                        class="far fa-trash-alt"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab-content" :class="{active: tab_active == 5}">
+
+            <div class="form-row">
+                <div class="form-group col-04">
+                    <label class="label"><i class="fa fa-upload" aria-hidden="true"></i> Imagem</label>
+                    <input type="file" placeholder="Upload file" class="form-control" @change="imageChange($event)"
+                        accept="image/*">
+                </div>
+            </div>
+
+            <div class="list-data bg-custum">
+                <!-- <div class="img-item" v-for="item in Model.Imgs">
+                    <div class="image"><img :src="mapUrl(item.Path)" alt=""></div>
+                    <div class="remove"><button type="button" @click="removeImage(item.Id)"><i
+                                class="fas fa-times"></i></button></div>
+                </div> -->
+            </div>
+        </div>
+
+            
+    <div class="btns-action">
+        <button type="button" class="btn btn-outline-success" title="Salvar"><i class="fas fa-save"></i> Salvar</button>
+        <button type="button" class="btn btn-outline-danger" title="Cancelar" @click="close"><i
+                class="fas fa-times"></i> Cancelar</button>
+    </div>
+    
+
+    </div>
+
+
+
+</section>

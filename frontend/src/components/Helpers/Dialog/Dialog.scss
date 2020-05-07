@@ -1,0 +1,69 @@
+@import '../../../design/colors.scss';
+
+.sec-dialog {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    .box-panel{
+        flex: 1;
+        width: 410px;
+        max-height: 140px;
+        background-color: #f6f6f6;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        @media(max-width:800px){
+            width: calc(100% - 30px);
+        }
+        .head-title{
+            flex: 1;
+            max-height: 40px;
+            color:#fff;
+            padding: 7px;
+            font-size: 20px;
+            border-top-left-radius:10px;
+            border-top-right-radius:10px;
+            display: flex;
+            flex-direction: row;
+            &.primary{
+                background-color: lighten($color-primary, 10%);
+            }
+            &.danger{
+                background-color: $color-danger;
+            }
+            &.warning{
+                background-color: $color-warning;
+            }
+            &.success{
+                background-color: $color-success;
+            }
+            .title{
+                flex: 1;
+            }
+            .btn-close{
+                justify-content: flex-end;
+                cursor: pointer;
+                background-color: transparent;
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #fff;
+                border:0;
+                outline: none;
+            }
+        }
+        .mensagem{
+            padding: 12px;
+            font-size: 18px;
+            text-align: justify;
+        }
+    }
+}

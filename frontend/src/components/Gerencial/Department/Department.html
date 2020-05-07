@@ -1,0 +1,40 @@
+<section class="department">
+  <h2 class="titleRel">Departamento</h2>
+
+  <FlashMensagem :text="flashMsgObj.text" :type="flashMsgObj.type" v-if="flashMsgObj.active" />
+
+  <form class="form-panel" v-if="tabFormActive">
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Nome</label>
+        <div class="control"><input type="text" class="input" v-model="model.Name"></div>
+      </div>
+    </div>
+
+    <div class="form-row col-12">
+      <div class="sec-field-input form-group col-03">
+        <label class="label">Principal</label>
+        <div class="control">
+          <span class="select">
+            <select v-model="model.DepartParentRID">
+              <option value="" selected  class="sec-disabled" disabled>-- Selecione --</option>
+              <option v-for="option in dataOpitons" :value="option.RID">{{option.Name}}</option>
+            </select>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row col-12 btns-action left">
+      <button class="btn btn-success" @click="saveItem">Salvar</button>
+      <button class="btn btn-danger" @click="activeFormData(false)">Cancelar</button>
+    </div>
+
+  </form>
+
+  <Grid v-else :optionsData="optionsDataSource" urlGet="api/v1/department/list" 
+    @eventEdit="activeFormData(true,$event)"
+    @eventAdd="activeFormData(true)" />
+
+</section>

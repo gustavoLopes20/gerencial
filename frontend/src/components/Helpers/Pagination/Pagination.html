@@ -1,0 +1,10 @@
+<section class="sec-pagination">
+  <div class="range-info">
+    <span class="desc">{{rangeFMT[0]}} até {{rangeFMT[1]}} de {{totalItems}}</span>
+  </div>
+  <ul class="pagination-product-grid">
+    <li><button type="button"  @click="prevPage"  class="item"><i class="fas fa-chevron-left"></i></button></li>
+    <li v-for="pag in pages"><button type="button" @click="paginate(pag)" class="item" :class="{'active': pag === currentPage}">{{pag}}</button></li>
+    <li><button type="button"  @click="nextPage" class="item"><i class="fas fa-chevron-right"></i></button></li>
+  </ul>
+</section>
